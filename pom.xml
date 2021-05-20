@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.github.ong</groupId>
+    <artifactId>ong-spring-starters</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>spring-boot-starter-grpc-client</module>
+        <module>spring-boot-starter-grpc-server</module>
+        <module>log-core</module>
+        <module>common-core</module>
+        <module>grpc-core</module>
+        <module>examples</module>
+    </modules>
+
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <common.core.version>1.0.0</common.core.version>
+        <log.core.version>1.0.0</log.core.version>
+        <grpc.core.version>1.0.0</grpc.core.version>
+        <grpc.version>1.31.0</grpc.version>
+        <io-protostuff.version>1.6.0</io-protostuff.version>
+        <common.pool.version>2.9.0</common.pool.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.ong</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${common.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ong</groupId>
+                <artifactId>log-core</artifactId>
+                <version>${log.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ong</groupId>
+                <artifactId>grpc-core</artifactId>
+                <version>${grpc.core.version}</version>
+            </dependency>
+
+            <!--            grpc-server start           -->
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${io-protostuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${io-protostuff.version}</version>
+            </dependency>
+            <!--            grpc-server end           -->
+
+            <!-- 连接池 start -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${common.pool.version}</version>
+            </dependency>
+            <!-- 连接池 end -->
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+</project>

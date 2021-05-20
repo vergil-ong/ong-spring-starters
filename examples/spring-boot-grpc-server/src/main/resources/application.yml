@@ -1,0 +1,15 @@
+server:
+  port: 6001
+
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 0
+  jackson:
+    default-property-inclusion: non_null
+  application:
+    name: grpc-server
+
+grpc:
+  server:
+    enable: true

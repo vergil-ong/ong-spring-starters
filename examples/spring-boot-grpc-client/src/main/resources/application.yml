@@ -1,0 +1,20 @@
+server:
+  port: 5001
+
+
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 0
+  jackson:
+    default-property-inclusion: non_null
+  application:
+    name: grpc-client
+
+grpc:
+  client:
+    enable: true
+    pool:
+      max-idle: 60
+      min-idle: 0
+      max-total: 8

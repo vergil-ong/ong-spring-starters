@@ -1,0 +1,9 @@
+# Project exclude paths
+/common-core/target/
+/examples/example-core/target/
+/examples/spring-boot-grpc-client/target/
+/examples/spring-boot-grpc-server/target/
+/grpc-core/target/
+/log-core/target/
+/spring-boot-starter-grpc-client/target/
+/spring-boot-starter-grpc-server/target/

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="log-core" />
+        <module name="spring-boot-grpc-server" />
+        <module name="spring-boot-starter-grpc-client" />
+        <module name="example-core" />
+        <module name="spring-boot-starter-grpc-server" />
+        <module name="spring-boot-grpc-client" />
+        <module name="common-core" />
+        <module name="grpc-core" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common-core" options="-parameters" />
+      <module name="example-core" options="-parameters" />
+      <module name="examples" options="-parameters" />
+      <module name="grpc-core" options="-parameters" />
+      <module name="log-core" options="-parameters" />
+      <module name="ong-spring-starters" options="-parameters" />
+      <module name="spring-boot-grpc-client" options="-parameters" />
+      <module name="spring-boot-grpc-server" options="-parameters" />
+      <module name="spring-boot-starter-grpc-client" options="-parameters" />
+      <module name="spring-boot-starter-grpc-server" options="-parameters" />
+    </option>
+  </component>
+</project>

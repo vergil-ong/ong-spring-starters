@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  scan="true" scanPeriod="30 seconds">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyyMMdd:HH:mm:ss.SSS} [%thread] [%X{traceId}] %-5level  %logger{50}:%line - %msg%n"/>
+    <property name="log.dir" value="logs"/>
+    <springProperty scope="context" name="app.name" source="spring.application.name" />
+
+    <conversionRule conversionWord="msg" converterClass="com.github.ong.log.converter.ArgJsonFormatConverter" />
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.dir}/${app.name}/stdout.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log.dir}/otherdays/stdout.%d{yyyy-MM-dd-HH}.log</FileNamePattern>
+            <MaxHistory>240</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>
